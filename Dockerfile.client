@@ -24,20 +24,21 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-# Build for Python 3.5
-ARG PYVER=3.5
+# Build for Python 3.6
+ARG PYVER=3.6
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
             software-properties-common \
             autoconf \
             automake \
             build-essential \
             curl \
             git \
-            libcurl3-dev \
+            libcurl4-openssl-dev \
+            python3-distutils \
             libopencv-dev \
             libopencv-core-dev \
             libtool \

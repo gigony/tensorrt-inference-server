@@ -51,7 +51,7 @@ LIBPROTOBUF := $(LIBGRPCDIR)/grpc/libs/opt/protobuf/libprotobuf.a
 IMAGE_SRCS  := $(CPPDIR)/image_client.cc
 IMAGE_OBJS  := $(addprefix $(BUILDDIR)/, $(IMAGE_SRCS:%.cc=%.o))
 IMAGE_LDFLAGS := $(LIBGRPC) $(LIBPROTOBUF) -L/opt/local/lib -lcurl -lz -lpthread \
-                 -lopencv_core -lopencv_imgproc -lopencv_highgui -ldl
+                 -lopencv_imgcodecs -ldl
 
 ENSEMBLE_SRCS   := $(CPPDIR)/ensemble_image_client.cc
 ENSEMBLE_OBJS   := $(addprefix $(BUILDDIR)/, $(ENSEMBLE_SRCS:%.cc=%.o))
